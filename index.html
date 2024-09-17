@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja dos Guri</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!--Barra superior do site-->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:  orange;">
+        <a class="navbar-brand" href="#">Loja Super</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home<span class="sr-only">(Página atual)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="carrinho.html">Carrinho</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cadastro.html">Cadastrar</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+</head>
+
+<!--Corpo do arquivo-->
+<body>
+
+  <!--Tabela das roupas-->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/fig0.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">CANECA GOKU</h5>
+            <p class="card-text">R$ 49,00 - Disponível</p>
+            <a id="1" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/fig1.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">CAMISETA DRAGON BALL</h5>
+            <p class="card-text">R$ 49,90 - Disponível</p>
+            <a id="2" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/fig2.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">CANECA ESTILIZADA DRAGON BALL Z</h5>
+            <p class="card-text">R$ 49,90 - Disponível</p>
+            <a id="3" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/fig4.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">CAMISETA SUPER SAIYAJIN</h5>
+            <p class="card-text">R$ 49,90 - Disponível</p>
+            <a id="4" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/fig5.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">CANECA GOKU GENERATIONS</h5>
+            <p class="card-text">R$ 49,90 - Disponível</p>
+            <a id="5" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/fig7.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">BONÉ GOKU</h5>
+            <p class="card-text">R$ 49,90 - Disponível</p>
+            <a id="6" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/fig8.webp" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">QUADRO INSTINTO SUPERIOR</h5>
+            <p class="card-text">R$ 49,90 - Disponível</p>
+            <a id="7" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/fig6.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">MOUSEPAD ESTILIZADO GOKU</h5>
+            <p class="card-text">R$ 79,90 - Disponível</p>
+            <a id="8" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/fig9.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">TECLADO MECANICO DRAGON BALL SUPER RGB, USB/BLUETOOTH </h5>
+            <p class="card-text">R$ 199,90 - Disponível</p>
+            <a id="9" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--JavaScript do Bootstrap-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="compra.js"></script>  
+</body>
+
+
+
+<footer>
+
+  <ul class="nav justify-content-center">
+    <a class="nav-link active" href="sobrenos.html">Sobre nós</a>
+  </ul>
+
+</footer>
+</html>
