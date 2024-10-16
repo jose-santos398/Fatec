@@ -1,69 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja dos Guri</title>
-
+    <title>Loja Super</title>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
-    <!--Barra superior do site-->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:  #9837f3">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .card-text {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+
+    <!-- Barra superior do site -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: blueviolet">
         <a class="navbar-brand" href="#">Loja Super</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home<span class="sr-only">(Página atual)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="carrinho.html">Carrinho</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Login</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Cadastrar</a>
-            </li>
-          </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrinho.html">Carrinho</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastro.html">Cadastrar</a>
+                </li>
+            </ul>
         </div>
-      </nav>
-
+    </nav>
 </head>
 
-<!--Corpo do arquivo-->
-<body>
-  <div class="form">
-    <form class="row g-3">
-      <div class="col-auto">
-        <label for="inputEmail2" class="visually-hidden">Email</label>
-        <input class="form-control" id="inputEmail" placeholder="Email">
-      </div>
-      <div class="col-auto">
-        <label for="inputSenha2" class="visually-hidden">Senha</label>
-        <input type="password" class="form-control" id="inputSenha" placeholder="Senha">
-        <h1></h1>
-        <button onclick="criarconta(inputEmail, inputSenha)" type="submit" class="btn btn-primary mb-3">Criar conta</button>
-      </div>
-    </form>
-  </div>
+<body style="background-color: wheat">
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Cadastro</h2>
+        <div class="row">
+            <!-- Formulário de Cadastro -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <form onsubmit="logar(inputEmail.value, inputSenha.value); return false;">
+                            <div class="form-group">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Digite seu email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputSenha">Senha</label>
+                                <input type="password" class="form-control" id="inputSenha" placeholder="Digite sua senha" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Cadastrar!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Resumo da Loja -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Bem-vindo à Loja Super!</h5>
+                        <p class="card-text">Aqui você encontra uma variedade de produtos a preços imbatíveis! Nossa missão é oferecer a melhor experiência de compra online, com produtos de qualidade e um atendimento excepcional.</p>
+                        <p class="card-text">Aproveite nossas promoções e venha conferir as novidades. Seu carrinho está apenas a um clique de distância!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!--JavaScript do Bootstrap-->
+    <!-- JavaScript do Bootstrap -->
     <script src="login.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
-<footer>
-
-  <ul class="nav justify-content-center">
-    <a class="nav-link active" href="sobrenos.html">Sobre nós</a>
-  </ul>
-
+<footer style="background-color: wheat">
+    <div class="container text-center">
+        <div class="py-3" style="background-color: blueviolet">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="sobrenos.html">Sobre nós</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </footer>
-
 </html>
