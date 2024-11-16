@@ -1,0 +1,21 @@
+
+.card {
+    border: 2px solid blueviolet;
+    border-radius: 10px; 
+}
+
+.container {
+    padding-top: 4%;
+}
+
+.texto_sobrenos {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+}

@@ -3,6 +3,8 @@ Loja virtual na temática Dragon Ball
 
 MEMBROS DO GRUPO: 
 José Luiz Souza Santos
-Lucas Machado dos Passos
 Miguel de Souza Alves.
-#9837f3
+# Link do Site
+https://jose-santos398.github.io/Fatec/
+# Link do repositorio
+https://github.com/jose-santos398/Fatec

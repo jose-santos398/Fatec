@@ -1,61 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Loja de produtos Dragon Ball com canecas, camisetas, quadros e mais itens exclusivos.">
+    <meta name="keywords" content="dragon ball, caneca, camiseta, boné, anime">
     <title>Loja Super</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
+    <!-- FontAwesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
     <style>
         body {
             background-color: wheat;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
+
         .navbar {
-            background-color:  orangered; /* Pink */
+            background-color: #d64d29;
+            width: 170px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            transition: all 0.3s;
+            z-index: 1000;
         }
+
+        .navbar .navbar-nav {
+            flex-direction: column;
+        }
+
+        .navbar .navbar-nav .nav-item {
+            margin: 15px 0;
+        }
+
+        .navbar-toggler {
+            display: none;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
         .card {
-            border: 2px solid  blue; /* Orange Red */
+            border: 2px solid blue;
             transition: transform 0.2s;
+            width: 80%;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            transition: 0.2s;
         }
+
         .card:hover {
             transform: scale(1.05);
         }
+
+        .card-img-top {
+            width: 100%;
+            /* A imagem ocupa toda a largura do card */
+            height: auto;
+            /* Mantém a proporção da imagem */
+            object-fit: cover;
+            /* Ajusta a imagem sem distorcer */
+            transition: transform 0.2s;
+            /* Transição suave na imagem */
+        }
+
+        .card:hover .card-img-top {
+            transform: none;
+            /* Garante que a imagem não tenha transformação no hover */
+        }
+
+        .container {
+            margin-left: 180px;
+            flex-grow: 1;
+            padding-bottom: 30px;
+        }
+
+        /* Footer Styling */
         .footer {
             background-color: orangered;
             padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            text-align: center;
+            margin-top: auto;
+            width: 99, 9%;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .container {
+                margin-left: 0;
+            }
+
+            .navbar-toggler {
+                display: block;
+            }
+
+            .navbar-collapse {
+                display: none;
+            }
+
+            .navbar-collapse.show {
+                display: block;
+            }
         }
     </style>
 </head>
 
 <body>
+
+    <!-- Lateral Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand text-white" href="#">Loja Super</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <div id="userWelcome" class="user-welcome"></div>  
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link text-white" href="#">Home<span class="sr-only">(Página atual)</span></a>
+                    <a class="nav-link text-white" href="#"><i class="fas fa-home"></i> Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="carrinho.html">Carrinho</a>
+                    <a class="nav-link text-white" href="carrinho.html"><i class="fas fa-shopping-cart"></i>
+                        Carrinho</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="login.html">Login</a>
+                    <a class="nav-link text-white" href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="cadastro.html">Cadastrar</a>
+                    <a class="nav-link text-white" href="cadastro.html"><i class="fas fa-user-plus"></i> Cadastrar</a>
                 </li>
             </ul>
         </div>
     </nav>
-
+    <!-- Main Content -->
     <div class="container mt-4">
         <div class="row">
             <div class="col-sm">
@@ -64,27 +157,27 @@
                     <div class="card-body">
                         <h5 class="card-title">CANECA GOKU</h5>
                         <p class="card-text">R$ 49,00 - Disponível</p>
-                        <a id="1" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+                        <a id="1" class="btn btn-danger" onclick="comprar(id, 'CANECA GOKU', 49.00)">Comprar 🛒</a>
                     </div>
                 </div>
             </div>
             <div class="col-sm">
                 <div class="card mb-4">
-                    <img src="assets/fig1.jpeg" class="card-img-top" alt="CAMISETA DRAGON BALL">
+                    <img src="assets/fig1.jpeg" class="card-img-top" alt="CAMISETA DRAGON BALL" loading ="lazy">
                     <div class="card-body">
                         <h5 class="card-title">CAMISETA DRAGON BALL</h5>
                         <p class="card-text">R$ 49,90 - Disponível</p>
-                        <a id="2" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+                        <a id="2" class="btn btn-danger" onclick="comprar(id, 'CAMISETA DRAGON BALL', 49.90)">Comprar 🛒</a>
                     </div>
                 </div>
             </div>
             <div class="col-sm">
                 <div class="card mb-4">
-                    <img src="assets/fig2.jpeg" class="card-img-top" alt="CANECA ESTILIZADA DRAGON BALL Z">
+                    <img src="assets/fig2.jpeg" class="card-img-top" alt="CANECA ESTILIZADA DRAGON BALL Z" loading ="lazy">
                     <div class="card-body">
                         <h5 class="card-title">CANECA ESTILIZADA DRAGON BALL Z</h5>
                         <p class="card-text">R$ 49,90 - Disponível</p>
-                        <a id="3" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+                        <a id="3" class="btn btn-danger" onclick="comprar(id, 'CANECA ESTILIZADA DRAGON BALL Z', 49.90)">Comprar 🛒</a>
                     </div>
                 </div>
             </div>
@@ -93,31 +186,31 @@
         <div class="row">
             <div class="col-sm">
                 <div class="card mb-4">
-                    <img src="assets/fig4.png" class="card-img-top" alt="CAMISETA SUPER SAIYAJIN">
+                    <img src="assets/fig4.png" class="card-img-top" alt="CAMISETA SUPER SAIYAJIN" loading ="lazy">
                     <div class="card-body">
                         <h5 class="card-title">CAMISETA SUPER SAIYAJIN</h5>
                         <p class="card-text">R$ 49,90 - Disponível</p>
-                        <a id="4" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+                        <a id="4" class="btn btn-danger" onclick="comprar(id, 'CAMISETA SUPER SAIYAJIN', 49.90)">Comprar 🛒</a>
                     </div>
                 </div>
             </div>
             <div class="col-sm">
                 <div class="card mb-4">
-                    <img src="assets/fig5.jpeg" class="card-img-top" alt="CANECA GOKU GENERATIONS">
+                    <img src="assets/fig5.jpeg" class="card-img-top" alt="CANECA GOKU GENERATIONS" loading ="lazy" >
                     <div class="card-body">
                         <h5 class="card-title">CANECA GOKU GENERATIONS</h5>
                         <p class="card-text">R$ 49,90 - Disponível</p>
-                        <a id="5" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+                        <a id="5" class="btn btn-danger" onclick="comprar(id, 'CANECA GOKU GENERATIONS', 49.90)">Comprar 🛒</a>
                     </div>
                 </div>
             </div>
             <div class="col-sm">
                 <div class="card mb-4">
-                    <img src="assets/fig7.png" class="card-img-top" alt="BONÉ GOKU">
+                    <img src="assets/fig7.png" class="card-img-top" alt="BONÉ GOKU" loading ="lazy">
                     <div class="card-body">
                         <h5 class="card-title">BONÉ GOKU</h5>
                         <p class="card-text">R$ 49,90 - Disponível</p>
-                        <a id="6" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+                        <a id="6" class="btn btn-danger" onclick="comprar(id, 'BONÉ GOKU', 49.90)">Comprar 🛒</a>
                     </div>
                 </div>
             </div>
@@ -126,37 +219,39 @@
         <div class="row">
             <div class="col-sm">
                 <div class="card mb-4">
-                    <img src="assets/fig8.webp" class="card-img-top" alt="QUADRO INSTINTO SUPERIOR">
+                    <img src="assets/fig8.webp" class="card-img-top" alt="QUADRO INSTINTO SUPERIOR" loading ="lazy">
                     <div class="card-body">
                         <h5 class="card-title">QUADRO INSTINTO SUPERIOR</h5>
                         <p class="card-text">R$ 49,90 - Disponível</p>
-                        <a id="7" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+                        <a id="7" class="btn btn-danger" onclick="comprar(id, 'QUADRO INSTINTO SUPERIOR', 49.90)">Comprar 🛒</a>
                     </div>
                 </div>
             </div>
             <div class="col-sm">
                 <div class="card mb-4">
-                    <img src="assets/fig6.jpeg" class="card-img-top" alt="MOUSEPAD ESTILIZADO GOKU">
+                    <img src="assets/fig6.jpeg" class="card-img-top" alt="MOUSEPAD ESTILIZADO GOKU" loading ="lazy">
                     <div class="card-body">
                         <h5 class="card-title">MOUSEPAD ESTILIZADO GOKU</h5>
-                        <p class="card-text">R$ 79,90 - Disponível</p>
-                        <a id="8" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+                        <p class="card-text">R$ 49,90 - Disponível</p>
+                        <a id="8" class="btn btn-danger" onclick="comprar(id, 'MOUSEPAD ESTILIZADO GOKU', 49.90)">Comprar 🛒</a>
                     </div>
                 </div>
             </div>
             <div class="col-sm">
                 <div class="card mb-4">
-                    <img src="assets/fig9.jpg" class="card-img-top" alt="TECLADO MECANICO DRAGON BALL SUPER RGB, USB/BLUETOOTH">
+                    <img src="assets/fig9.webp" class="card-img-top"
+                        alt="TECLADO MECANICO DRAGON BALL SUPER RGB, USB/BLUETOOTH" loading ="lazy">
                     <div class="card-body">
                         <h5 class="card-title">TECLADO MECANICO DRAGON BALL SUPER RGB</h5>
-                        <p class="card-text">R$ 199,90 - Disponível</p>
-                        <a id="9" class="btn btn-danger" onclick="comprar(id)">Comprar 🛒</a>
+                        <p class="card-text">R$ 49,90 - Disponível</p>
+                        <a id="9" class="btn btn-danger" onclick="comprar(id, 'TECLADO MECANICO DRAGON BALL', 49.90)">Comprar 🛒</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
         <ul class="nav justify-content-center">
             <li class="nav-item">
@@ -165,6 +260,27 @@
         </ul>
     </footer>
 
-    <!-- JavaScript do Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbB
+    <!-- Bootstrap and FontAwesome JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbB" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIKBriWvh0g3tflFmwJqLVjFJsfZPaG2nPccN1p6zV+LmcdTw92la"
+        crossorigin="anonymous"></script>
+
+        <script src="compra.js"></script>
+        <script src="login.js"></script>
+
+</body>
+
+</html>
+
+Tem como adicionar umas coisas nessa index para mim?
+Nome do usuario que logou (pega o primeiro informação do email dele sem o @gmail)
+E joga na home quando estiver logado
+E uma funcionalidade de zerar todos as sessions com um logout
+
+Pfv sem alterar a pagina 
+E me mostra o codigo com tudo feito

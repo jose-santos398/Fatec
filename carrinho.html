@@ -6,9 +6,37 @@
     <title>Loja Super</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
-</head>
+    <style>
+        /* Adicionar estilo personalizado */
+        body {
+            background-color: #f8f9fa;
+        }
 
-<body onload="atualizar_carrinho()" style="background-color:wheat">
+        .jumbotron {
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin-top: 30px;
+        }
+
+        .total-container {
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .btn-payment {
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body onload="atualizar_carrinho()">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">Loja Super</a>
@@ -18,7 +46,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home<span class="sr-only">(Página atual)</span></a>
+                    <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Carrinho</a>
@@ -36,20 +64,35 @@
     <!-- Main Content -->
     <div class="container mt-4">
         <h1 class="text-center mb-4">Meu Carrinho de Compras</h1>
-        <ul id="lista-carrinho" class="list-group mb-4">
-            <!-- Itens do carrinho serão adicionados aqui -->
-        </ul>
-        <div class="jumbotron jumbotron-fluid text-center" style="border: 2px solid #000; border-radius: 10px;">
-            <div class="container">
-                <h1 id="total" class="display-4">TOTAL: </h1>
-                <a href="" class="btn btn-success btn-lg">Finalizar Compra</a>
+
+        <!-- Lista de Itens no Carrinho -->
+        <div id="lista-carrinho" class="list-group mb-4">
+            <!-- Itens do carrinho serão adicionados dinamicamente aqui -->
+        </div>
+
+        <!-- Total e Opções de Pagamento -->
+        <div class="total-container">
+            <h3 id="total" class="text-center">TOTAL: R$ 0,00</h3>
+
+            <!-- Opções de Pagamento -->
+            <h4>Escolha uma forma de pagamento:</h4>
+            <div class="form-group">
+                <label for="metodoPagamento">Método de Pagamento</label>
+                <select class="form-control" id="metodoPagamento">
+                    <option value="pix">Pix</option>
+                    <option value="cartaoCredito">Cartão de Crédito</option>
+                    <option value="cartaoDebito">Cartão de Débito</option>
+                </select>
             </div>
+
+            <button class="btn btn-success btn-lg btn-payment" onclick="finalizar_compra()" href="index.html">Finalizar Compra</button>
+
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-light py-3" style="background-color:wheat">
-        <div class="container">
+    <footer class="footer">
+        <div class="container text-center">
             <ul class="nav justify-content-center">
                 <li class="nav-item">
                     <a class="nav-link" href="sobrenos.html">Sobre nós</a>
@@ -62,6 +105,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Seu script de compra -->
     <script src="compra.js"></script>
 </body>
 </html>
