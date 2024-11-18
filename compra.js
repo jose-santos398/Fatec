@@ -3,7 +3,6 @@ function comprar(id, nome, preco) {
     const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     const itemExistente = carrinho.find(item => item.id === id);
 
-    // Se o item já estiver no carrinho, atualiza a quantidade
     if (itemExistente) {
         itemExistente.quantidade += 1;
     } else {
