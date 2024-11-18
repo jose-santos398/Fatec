@@ -61,6 +61,10 @@ function finalizar_compra() {
         alert("Seu carrinho está vazio!");
     }
 }
+function confirma_compra() {
+    alert('Adicionado item no carrinho!');
+    }
+
 
 
 // Inicializa a exibição do carrinho quando a página carrega
