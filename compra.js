@@ -8,6 +8,7 @@ function comprar(id, nome, preco) {
     } else {
         // Caso contrário, adiciona o novo item
         carrinho.push({ id, nome, preco, quantidade: 1 });
+
     }
 
     // Salva o carrinho no localStorage
@@ -15,6 +16,7 @@ function comprar(id, nome, preco) {
 
     // Atualiza a exibição do carrinho
     atualizar_carrinho();
+    alert('Adicionado item no carrinho!');
 }
 
 // Função para atualizar a lista de itens no carrinho
@@ -58,12 +60,10 @@ function finalizar_compra() {
         // Redireciona para a página index.html
         window.location.href = 'index.html';  
     } else {
-        alert("Seu carrinho está vazio!");
+        alert("Seu carrinho está vazio!")
     }
 }
-function confirma_compra() {
-    alert('Adicionado item no carrinho!');
-    }
+
 
 
 
